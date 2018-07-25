@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+	<title> Ethical Behaviour Research </title>
+	<meta charset="utf-8">
+	<script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="jspsych-5.0.3/jspsych.js"></script> <!--jspsych used for randomization and other potential uses-->
+	<link rel="stylesheet"
+			  href="https://fonts.googleapis.com/css?family=Comfortaa">
+	<link rel="stylesheet"
+			  href="https://fonts.googleapis.com/css?family=Open+Sans">
+</head>
+
+<body onload="TutLoad()">
+
+	<main id="home">
+	
+		<div id="homestart">
+		<h1> Real world Moral Behaviour </h1>
+			<p>Thank you for taking part in this survey about ethical behaviour! This survey will ask you questions around your moral behaviours.<br>
+			<br>Your results will not be stored until you submit your participant information after the survey is complete and you will be informed when the survey has reached the end. 
+			The entire survey should take around 10-20 minutes.<br></p>
+		</div>
+			<p id="surbut"><button id="startsurvey"> Start survey! </button></p>
+		
+	</main>
+
+	<main id="mfq">
+		<h2> Real World Moral Foundations </h2>
+		
+		<div id="mfqrelevance" ng-app="app" ng-controller="controller">
+		
+		
+		
+				<h3> When you decide whether something is right or wrong in the <b>real world</b>, to what extent are the following considerations relevant to your thinking? Please rate each statement using this scale: </h3>
+				<p>  <b>[0] = Not at all relevant (This consideration has nothing to do with my judgments of right and wrong)<br>
+						[1] = Not very relevant<br>
+						[2] = Slightly relevant<br>
+						[3] = Somewhat relevant<br>
+						[4] = Very relevant<br>
+						[5] = Extremely relevant (This is one of the most important factors when I judge right and wrong)</b>
+				</p>
+			<div id="separator">
+				<hr class="style1" style="width: 100%">
+			</div>
+			<p id="relevance"> 
+				<input type="text" maxlength="1" class="mfqentry"> 1. Whether or not someone suffered emotionally.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 2. Whether or not some people were treated differently than others.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 3. Whether or not someone’s action showed love for his or her country.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 4. Whether or not someone showed a lack of respect for authority.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 5. Whether or not someone violated standards of purity and decency.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 6. Whether or not someone was good at math.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 7. Whether or not someone cared for someone weak or vulnerable.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 8. Whether or not someone acted unfairly.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 9. Whether or not someone did something to betray his or her group.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 10. Whether or not someone conformed to the traditions of society .<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 11. Whether or not someone did something disgusting.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 12. Whether or not someone was cruel.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 13. Whether or not someone was denied his or her rights.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 14. Whether or not someone showed a lack of loyalty.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 15. Whether or not an action caused chaos or disorder.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 16. Whether or not someone acted in a way that God would approve of.<br>
+			</p>
+			
+			<button id="mfqnext" type="button"> Next section </button>
+		</div>
+		
+		<div id="mfqagreement">
+			<h3> Please read the following sentences and indicate your agreement or disagreement: </h3>
+				<p>  <b>[0] = Strongly disagree<br>
+						[1] = Moderately disagree<br>
+						[2] = Slightly disagree<br>
+						[3] = Slightly agree<br>
+						[4] = Moderately agree<br>
+						[5] = Strongly agree</b>
+				</p>
+			<div id="separator">
+				<hr class="style1" style="width: 100%">
+			</div>
+			<p id="agreement">
+				<input type="text" maxlength="1" class="mfqentry"> 17. Compassion for those who are suffering is the most crucial virtue.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 18. When the government makes laws, the number one principle should be ensuring that everyone is treated fairly.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 19. I am proud of my country’s history.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 20. Respect for authority is something all children need to learn.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 21. People should not do things that are disgusting, even if no one is harmed. <br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 22. It is better to do good than to do bad.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 23. One of the worst things a person could do is hurt a defenseless animal.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 24. Justice is the most important requirement for a society.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 25. People should be loyal to their family members, even when they have done something wrong. <br><br> 
+				<input type="text" maxlength="1" class="mfqentry"> 26. Men and women each have different roles to play in society.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 27. I would call some acts wrong on the grounds that they are unnatural.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 28. It can never be right to kill a human being.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 29. I think it’s morally wrong that rich children inherit a lot of money while poor children inherit nothing.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 30. It is more important to be a team player than to express oneself.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 31. If I were a soldier and disagreed with my commanding officer’s orders, I would obey anyway because that is my duty.<br><br>
+				<input type="text" maxlength="1" class="mfqentry"> 32. Chastity is an important and valuable virtue.<br><br>
+				<button id="mfqprevious" type="button"> Previous section </button> 
+			</p>
+			<button id="mfqconfirm" type="button"> Confirm </button>
+		</div>
+		
+		<!--Reference-->
+
+	</main>
+	
+	
+	
+	<main id="main">
+		<!--intro-->
+		<h2 id="object">Personal Moral Dilemmas </h2>
+		
+
+		<p id="intro"> Throughout this survey you will be shown a selection of moral dilemmas from both real world and video game scenarios, you must click on one of the two outcomes provided.
+		Your results will not be stored until you submit your participant information after the survey is complete. Below is an example and will not be recorded.<br><br>		</p>
+		
+		<p style="text-align: center;"> Please select one of the two options below. Hovering over the image will show the result of the outcome.<br>
+		<b>Please make a decision based on what you personally would do.</b><br></p>
+
+		<!--separator-->
+		<div id="separator">
+			<hr class="style1">
+		</div>
+		
+		<p id="dilemmainfo"><b> Situation: </b></p>
+		<!--dilemmas-->
+		
+		<div id="choices">
+			<div id="tutleft" onclick = "tutclassChangea()">
+				<p id="demoA" > Option A </p>
+					<div id="tutdilemmal">
+						<img src="trolleytest.png" id="tutoptiona" name="optiona" class="hover" />
+						<img src="stickman.png" id="tutplayera" name="playera" class="hover"/>
+						<img src="stickwoman.png" id="resulta"	name="resulta" class="hover"/>
+						<img src="stickwoman.png" id="resulta1"	name="resulta" class="hover"/>
+						<img src="stickwoman.png" id="resulta2"	name="resulta" class="hover"/>
+						<img src="death.png" id="deatha" name="death" class="hover"/>
+					</div>
+					<div id="results" class="hover">
+						<p class="ltext">Result:</p>
+						<ul>
+							<li> Man  = Dead</li>
+						</ul>
+						
+					</div>
+			</div>
+			
+			<div id="tutright"  onclick = "tutclassChangeb()">
+				<p id="demoB" > Option B </p>
+					<div id="tutdilemmar">
+						<img src="trolleytest.png" id="tutoptionb" name="optionb" class="hover" />
+						<img src="stickman.png" id="tutplayerb" name="playerb" class="hover"/>
+						<img src="stickwoman.png" id="resultb"	name="resultb" class="hover"/>
+						<img src="stickwoman.png" id="resultb1"	name="resultb" class="hover"/>
+						<img src="stickwoman.png" id="resultb2"	name="resultb" class="hover"/>
+						<img src="death.png" id="deathb" name="death" class="hover"/>
+						<img src="death.png" id="deathbt1" name="death" class="hover"/>
+						<img src="death.png" id="deathbt2" name="death" class="hover"/>
+					</div>
+					<div id="results" class="hover">
+						<p class="rtext">Result:</p>
+						<ul>
+							<li> Woman = Dead</li>
+							<li> Woman = Dead</li>
+							<li> Woman = Dead</li>
+						</ul>
+						
+					</div>
+			</div>
+		</div>
+		
+		<!--separator-->
+		<div id="separator">
+			<hr class="style1">
+		</div>
+		<!--bottom half-->
+		<p id="info"> </p>
+			<button id="tutconfirm" class="tutconfirm" type="button">Confirm</button>		
+		<p id="tuterror"> Please select an option! </p>
+	</main>
+	
+	<main id="loading">
+		<p id="loadtext"> Loading</p>
+	</main>
+	
+	
+	<main id="survey">
+	<!--intro-->
+		<h2>Personal Moral Dilemmas </h2>
+		
+		
+		<p id="intro" style="text-align: center;"> Please select one of the two options below.
+		Hovering over the image will show the result of the outcome.<br>
+		<b>Please make a decision based on what you personally would do.</b><br>
+		<p id="keybut"> <button id="showkey" class="button" type="button"> Show Key </button></p>
+		<div id="keydiv">
+		<b>Key:</b>
+		<br> <img src ="friend.png" alt="Smiley" align="bottom"> = Friend
+		<br> <img src ="stranger.png" alt="Question Mark" align="bottom"> = Stranger
+		<br> <img src ="NPC.png" alt="NPC" align="bottom"> = Non-player controlled character
+		</p>
+		</div>
+		<!--separator-->
+		<div id="separator">
+			<hr class="style1">
+		</div>
+		
+		<p id="dilemmainfo1"><b>Situation: </b></p>
+		<!--dilemmas-->
+		
+		<div id="choices">
+			<div id="left" onclick = "classChangea()">
+				<p id="demoA" > Option A </p>
+					<div id="dilemmal">
+						<img src="test.png" id="a" name="a" class="hover" />
+						<!--<img src="player.png" id="chara1" name="saveda" class="hover"/>
+						<img src="player.png" id="chara2" name="saveda" class="hover"/>
+						<!--<img src="death.png" id="deatha" name="death" class="hover"/>-->
+
+					</div>
+					<div id="results" class="hover">
+						<p id="ltext" class="ltext">Result: </p>
+						<ul id="llist" class="llist"> 
+							
+						</ul>
+					</div>
+			</div>
+			
+			
+			
+			<div id="right" onclick = "classChangeb()">
+				<p id="demoB" > Option B </p>
+					<div id="dilemmar">
+						<img src="test.png" id="b" name="b" class="hover" />
+						<!--<img src="player.png" id="charb1" name="savedb" class="hover"/>
+						<img src="player.png" id="charb2" name="saveda" class="hover"/>
+						<!--<img src="death.png" id="deathb" name="death" class="hover"/>-->
+
+					</div>
+					<div id="results" class="hover">
+						<p id="rtext" class="rtext">Result: </p>
+						<ul id="rlist" class="rlist"> 
+							
+						</ul>
+					</div>
+					</div>
+			</div>
+		</div>
+		
+		<!--separator-->
+		<div id="separator">
+			<hr class="style1">
+		</div>
+		<!--bottom half-->
+		<p id="info"> </p>
+		<button id="confirm" class="confirm" type="button">Confirm</button>		
+		<p id="error"> Please select an option! </p>
+	</main>
+	
+	<main id="participants">
+		<h2> Thanks for participating! </h2>
+		
+		<p> Please enter your details below. <br> You may leave a field blank if you do not wish to answer, 
+		click the complete button when you are finished and your survey answers shall be submitted. 
+		<br> Be aware once you have submitted, you will not be able to withdraw your answers.</p>
+		<p id="identifier"> Unique Identifier: </p>
+		<form id="form">
+			
+			<!--Unique Identifier, show to them-->
+			
+						
+			<div id="formleft">
+			<h3> Details </h3>
+				<input type="number" id="age" class="formfield" placeholder="Age" min="16" max="118">
+				<select id="gender" class="formfield" placeholder="Select one"> 
+					<option value="Male"> Male </option>
+					<option value="Female"> Female </option>
+					<option value="Other"> Other </option>
+					<option value="Decline"> I prefer not to say </option>
+				</select>
+				<br>		
+				
+				<p> Select up to your three most played multiplayer video game genres: </p>
+				
+				<input type="checkbox" name="shooter" class="game" value="Shooters"> Shooter <br>
+				<input type="checkbox" name="moba" class="game" value="MOBA" > Multiplayer Online Battle Arenas <br>
+				<input type="checkbox" name="rpg" class="game" value="RPG"> Role-playing games <br>
+				<input type="checkbox" name="strategy" class="game" value="Strategy"> Strategy <br>
+				<input type="checkbox" name="fighting" class="game" value="Fighting"> Fighting <br>
+				<input type="checkbox" name="sports" class="game" value="Sports"> Sports <br>
+				<input type="checkbox" name="racing" class="game" value="Racing"> Racing <br>
+				<input type="checkbox" name="tcg" class="game" value="TCG"> Trading Card Games <br>
+				<input type="checkbox" name="survival" class="game" value="Survival"> Survival <br>
+				<input type="checkbox" name="puzzle" class="game" value="Puzzle"> Puzzle <br>
+				
+				<input type="text" id="otherbox" class="formfield" placeholder="Other">
+				<button id="showmfq" class="button" type="button" style="margin-left: 50%" >Show Moral Foundations Results </button>
+					<div id="mfqgameresults">
+					<h4>Video Game Moral Foundations Results </h4>
+					<p style="font-size:12px"> <input id="gameharmcare" style="width: 2em" readonly>  Harm/Care <i>(20.2)</i> </p>
+					<p style="font-size:12px"> <input id="gamefairrecip" style="width: 2em" readonly> Fairness/Reciprocity <i>(20.5)</i> </p>
+					<p style="font-size:12px"> <input id="gamegrouployal" style="width: 2em" readonly>   In-group/Loyalty  <i>(16.0)</i></p>
+					<p style="font-size:12px"> <input id="gameauthrespect" style="width: 2em" readonly>  Authority/Respect <i>(16.5)</i></p>
+					<p style="font-size:12px"> <input id="gamepuresanc" style="width: 2em" readonly>  Purity/Sanctity  <i>(12.6)</i> </p>
+					<p style="font-size:12px"><i>*average</i>
+				</div>
+				
+			</div>
+			
+			<div id="formright">
+				<p> If applicable, what "roles" do you assume most in multiplayer video games? (Hover the textbox for examples)</p>
+			
+				<p class="tooltiptext">e.g: <br>RPG/MOBA = Tank, DPS, Support <br> TCG = Aggressive, Control, Combo <br> Shooter = Offensive, Defensive, Support</p>
+				<input type="text" id="rolebox" class="formfield" placeholder="Roles">
+				
+				<div id="mfqresults">
+					<h4>Real World Moral Foundations Results </h4>
+					<p style="font-size:12px"> <input id="harmcare" style="width: 2em" readonly>  Harm/Care <i>(20.2)</i> </p>
+					<p style="font-size:12px"> <input id="fairrecip" style="width: 2em" readonly> Fairness/Reciprocity <i>(20.5)</i> </p>
+					<p style="font-size:12px"> <input id="grouployal" style="width: 2em" readonly>   In-group/Loyalty  <i>(16.0)</i></p>
+					<p style="font-size:12px"> <input id="authrespect" style="width: 2em" readonly>  Authority/Respect <i>(16.5)</i></p>
+					<p style="font-size:12px"> <input id="puresanc" style="width: 2em" readonly>  Purity/Sanctity  <i>(12.6)</i> </p>
+					<p style="font-size:12px"><i>*average</i>
+				</div>
+			</div>
+			<br>
+				
+				
+				
+		</form>
+		
+			
+		
+		<button id="complete" type="button">Complete Survey!</button>
+		
+	
+	</main>
+	
+	<main id="mfqgames">
+		<h2> Video Game Moral Foundations </h2>
+		
+		<div id="mfqgamesrelevance" ng-app="app" ng-controller="controller">
+		
+		<p id="starter1">Thank you for taking part in this survey about ethical behaviour!<br>Your results will not be stored until you submit your participant information after the survey is complete. 
+		You will be informed when the survey has reached the end. You will be asked about a mixture of scenarios from video games and the real world, along with the moral foundations questionnaire you see below, the entire survey should take around 10-20 minutes.<br></p>
+		
+				<h3> When you decide whether something is right or wrong in <b>video games</b>, to what extent are the following considerations relevant to your thinking? Please rate each statement using this scale: </h3>
+				<p>  <b>[0] = Not at all relevant (This consideration has nothing to do with my judgments of right and wrong)<br>
+						[1] = Not very relevant<br>
+						[2] = Slightly relevant<br>
+						[3] = Somewhat relevant<br>
+						[4] = Very relevant<br>
+						[5] = Extremely relevant (This is one of the most important factors when I judge right and wrong)</b>
+				</p>
+			<div id="separator">
+				<hr class="style1" style="width: 100%">
+			</div>
+			<p id="relevance"> 
+				<input type="text" maxlength="1" class="mfqgameentry"> 1. Whether or not someone suffered emotionally.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 2. Whether or not some people were treated differently than others.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 3. Whether or not someone’s action showed love for his or her country.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 4. Whether or not someone showed a lack of respect for authority.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 5. Whether or not someone violated standards of purity and decency.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 6. Whether or not someone was good at math.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 7. Whether or not someone cared for someone weak or vulnerable.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 8. Whether or not someone acted unfairly.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 9. Whether or not someone did something to betray his or her group.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 10. Whether or not someone conformed to the traditions of society .<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 11. Whether or not someone did something disgusting.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 12. Whether or not someone was cruel.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 13. Whether or not someone was denied his or her rights.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 14. Whether or not someone showed a lack of loyalty.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 15. Whether or not an action caused chaos or disorder.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 16. Whether or not someone acted in a way that God would approve of.<br>
+			</p>
+			
+			<button id="mfqgamesnext" type="button"> Next section </button>
+		</div>
+		
+		<div id="mfqgamesagreement">
+			<h3> Please read the following sentences and indicate your agreement or disagreement: </h3>
+				<p>  <b>[0] = Strongly disagree<br>
+						[1] = Moderately disagree<br>
+						[2] = Slightly disagree<br>
+						[3] = Slightly agree<br>
+						[4] = Moderately agree<br>
+						[5] = Strongly agree</b>
+				</p>
+			<div id="separator">
+				<hr class="style1" style="width: 100%">
+			</div>
+			<p id="agreement">
+				<input type="text" maxlength="1" class="mfqgameentry"> 17. Compassion for those who are suffering is the most crucial virtue.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 18. When the government makes laws, the number one principle should be ensuring that everyone is treated fairly.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 19. I am proud of my country’s history.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 20. Respect for authority is something all children need to learn.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 21. People should not do things that are disgusting, even if no one is harmed. <br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 22. It is better to do good than to do bad.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 23. One of the worst things a person could do is hurt a defenseless animal.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 24. Justice is the most important requirement for a society.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 25. People should be loyal to their family members, even when they have done something wrong. <br><br> 
+				<input type="text" maxlength="1" class="mfqgameentry"> 26. Men and women each have different roles to play in society.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 27. I would call some acts wrong on the grounds that they are unnatural.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 28. It can never be right to kill a human being.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 29. I think it’s morally wrong that rich children inherit a lot of money while poor children inherit nothing.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 30. It is more important to be a team player than to express oneself.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 31. If I were a soldier and disagreed with my commanding officer’s orders, I would obey anyway because that is my duty.<br><br>
+				<input type="text" maxlength="1" class="mfqgameentry"> 32. Chastity is an important and valuable virtue.<br><br>
+				<button id="mfqgamesprevious" type="button"> Previous section </button> 
+			</p>
+			<button id="mfqgamesconfirm" type="button"> Confirm </button>
+		</div>
+		
+		<!--Reference-->
+
+	</main>
+	
+	<script src="PersonalFunctions.js"></script>
+	<script src="firebase.js"> </script>
+	<script src="client.min.js"> </script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</body>
+
+</html>
